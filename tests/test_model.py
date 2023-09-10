@@ -21,12 +21,12 @@ def processed_data(data, model_comps):
     cat_features = [
     "workclass",
     "education",
-    "marital-status",
+    "marital_status",
     "occupation",
     "relationship",
     "race",
     "sex",
-    "native-country",
+    "native_country",
     ]
     X, y, _, _  = process_data(data, cat_features, 
                                                label="salary", training=False, 
