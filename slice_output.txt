@@ -1,7 +1,5 @@
-Never-married: {'precision': 0.9705882352941176, 'recall': 0.3113207547169811, 'fbeta': 0.4714285714285714}
-Married-civ-spouse: {'precision': 0.972972972972973, 'recall': 0.13771996939556236, 'fbeta': 0.24128686327077747}
-Divorced: {'precision': 1.0, 'recall': 0.22093023255813954, 'fbeta': 0.36190476190476195}
-Separated: {'precision': 1.0, 'recall': 0.21428571428571427, 'fbeta': 0.35294117647058826}
-Married-spouse-absent: {'precision': 1.0, 'recall': 0.25, 'fbeta': 0.4}
-Widowed: {'precision': 1.0, 'recall': 0.06666666666666667, 'fbeta': 0.125}
-Married-AF-spouse: {'precision': 1.0, 'recall': 0.0, 'fbeta': 0.0}
+White: {'precision': 0.9867256637168141, 'recall': 0.1569317382125264, 'fbeta': 0.2707953855494839}
+Black: {'precision': 1.0, 'recall': 0.21686746987951808, 'fbeta': 0.3564356435643564}
+Asian-Pac-Islander: {'precision': 1.0, 'recall': 0.045454545454545456, 'fbeta': 0.08695652173913045}
+Amer-Indian-Eskimo: {'precision': 1.0, 'recall': 0.42857142857142855, 'fbeta': 0.6}
+Other: {'precision': 1.0, 'recall': 0.2, 'fbeta': 0.33333333333333337}

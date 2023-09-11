@@ -20,9 +20,6 @@ CATEGORY_FEATURES = [
     "native_country",
 ]
 
-model, encoder, lb = load_model('model')
-
-
 class Data(BaseModel):
     workclass: str = None
     education: str
@@ -60,6 +57,12 @@ class Data(BaseModel):
         }
 
 
+@app.on_event("startup")
+async def startup_event(): 
+    global model, encoder, lb
+    model, encoder, lb = load_model('model')
+
+
 @app.get("/")
 def read_root():
     response = Response(
@@ -71,8 +74,8 @@ def read_root():
 
 @app.post("/predict")
 def predict(data: Data):
+    global model, encoder, lb
     data = pd.DataFrame([data.dict()])
-    print(encoder)
     X, _, _, _ = process_data(data,
                               categorical_features=CATEGORY_FEATURES,
                               label=None, training=False,

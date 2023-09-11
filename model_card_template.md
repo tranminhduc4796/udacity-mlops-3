@@ -10,13 +10,13 @@ Prediction task is to determine whether a person makes over 50K a year.
 ## Evaluation Data
 The evaluation data is taken randomly from 20% of the training data.
 ## Metrics
-**Precision**: 0.97265625
+**Precision**: 0.988
 
-**Recall**: 0.1597177677998717 
+**Recall**: 0.15833333333333333 
 
-**F-Beta**: 0.2743801652892562
+**F-Beta**: 0.2729281767955801
 
 ## Ethical Considerations
-No concern for ethic curently
+The dataset introduces bias for men when the proportion of high earners in men is much higher in women. In addition, there is a large disparity in the proportion of high earners across different races.
 ## Caveats and Recommendations
 This model has high precision but low recall so it is better to only consider the positive predictions.

@@ -1,11 +1,12 @@
 from fastapi.testclient import TestClient
 from main import app
 
-client = TestClient(app)
 
 def test_index():
-    response = client.get("/")
-    assert response.status_code == 200
+    with TestClient(app) as client:
+        response = client.get("/")
+        assert response.status_code == 200
+        assert response.text == 'Welcome to the Personal Income Prediction Application'
 
 def test_negative():
     data = {
@@ -24,9 +25,10 @@ def test_negative():
             "capital_loss": 0,
             "hours_per_week": 40
             }
-    response = client.post("/predict", json=data)
-    assert response.status_code == 200
-    assert response.text == 'Predicted income: <=50K'
+    with TestClient(app) as client:
+        response = client.post("/predict", json=data)
+        assert response.status_code == 200
+        assert response.text == 'Predicted income: <=50K'
 
 def test_positive():
     data = {
@@ -45,13 +47,14 @@ def test_positive():
             "capital_loss": 0,
             "hours_per_week": 40
             }
-
-    response = client.post("/predict", json=data)
-    assert response.status_code == 200
-    assert response.text == 'Predicted income: >50K'
+    with TestClient(app) as client:
+        response = client.post("/predict", json=data)
+        assert response.status_code == 200
+        assert response.text == 'Predicted income: >50K'
 
 
 def test_invalid():
     data = {}
-    response = client.post("/predict", json=data)
-    assert response.status_code == 422
+    with TestClient(app) as client:
+        response = client.post("/predict", json=data)
+        assert response.status_code == 422
